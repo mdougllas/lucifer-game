@@ -22,9 +22,13 @@ function luciferGame(){
 
       if(e.keyCode !== 17 && e.keyCode !== 8){//Putting key Enter aside we want to access it
         e.preventDefault();//Killing the keys function
-        buildQuestion.push(askLucifer1[pressCount]);//push the array on each keypress
-        let questionDone = buildQuestion.join("");//making the array string
-        question.value = questionDone;//Populating input with fake string
+
+        //Making the input show the predefined array
+        buildQuestion.push(askLucifer1[pressCount]);
+        let questionDone = buildQuestion.join("");
+        question.value = questionDone;
+
+        //Storing the real string in a array
         buildAnswer.push(e.key);//Store the real string typed as an array
         var answerDone = buildAnswer.join("");console.log(answerDone);
         pressCount++;//Increasing keypress counter
