@@ -4,10 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=250, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
   <title>LUCIFER</title>
 </head>
 <body>
-  <input id="question" type="text" autofocus>
+  <div id="wrap">
+    <!-- Intro Page -->
+    <p id="title" class="transition10">LUCIFER</p>
+    <button id="start" class="transition5">Invoke Lucifer</button>
+    <div id="instructions">
+      Instructions
+      <span>
+        <span>Warnining! This will reveal the secret. Read it by yourself.</span><br>
+        Call your friends and tell them you are going to invoke Lucifer to the room and he is able to answer questions. Anything he can see, he is able to answer.<br>
+        1 - Start writing the answer. Some random text is going to be shown on screen.<br>
+        2 - Press the Ctrl/Command key to finish typing the question.<br>
+        3 - Finish the question and press Enter to show the answer.<br>
+        4 - Press Ctrl/Command to make a new question.<br>
+        Tips: Eyes closed on the screen - AUTO TYPING. Eyes opened on the screen - YOU'RE TYPING. You shoud try the game and be familiar with it before calling your friends.
+      </span>
+    </div>
+
+    <!-- Lucifer Page -->
+    <div id="the-game">
+      <div id="eyes" class="eyes-closed">
+        
+      </div>
+      <h1>Ask Lucifer</h1>
+      <textarea id="question" type="area" autocomplete="off" maxlength="200" autofocus></textarea>
+      <div id="answer" class="transition5"></div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="visual.js"></script>
+
 </body>
 </html>

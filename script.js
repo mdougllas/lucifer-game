@@ -1,38 +1,56 @@
-console.log("Lucifer's here");
-
 //Starting main function
 function luciferGame(){
-
-  takeKeyboard();//Game start with first method
-  let question = document.getElementById("question");
-  let body = document.getElementsByTagName("body")[0];
-  let newDiv = document.createElement("div");
 
   //Taking control of keyboard
   function takeKeyboard(){
 
+    answer.style = "opacity:0;"
+
     //Preparing the fake string to be shown on input while typing
-    let askLucifer1 = "Oh great master of evil...";//This will be more and random
-    askLucifer1 = askLucifer1.split("");//Separating the string in one array
-    let pressCount = 0;//Keypress counter
+    let randomQuestions = [
+      "Oh great master of death, powerful mind of the dark side, intelligence of the desperate souls! Please, help your servant answering...",
+
+      "Lucifer, strongest power of darkness, prince of evil, malefic mind! Could you please answer for your servant and his friends the following:",
+      
+      ""
+    ];
+
+    //Temporary question
+    let askLucifer = "Oh great master of death, powerful mind of the dark side, intelligence of the desperate souls! Please, help your servant answering...";
+    
+    askLucifer = askLucifer.split("");//Separating the string in one array
     let buildQuestion = [];//Empty array will fill the input
     let buildAnswer = [];//Empty array to store real string typed
-    
-    document.onkeydown = function(e){
+    let pressCount = 0;//Keypress counter
 
-      if(e.keyCode !== 17 && e.keyCode !== 8){//Putting key Enter aside we want to access it
+    //Hiding the answer
+    question.value = " ";
+    
+    document.onkeydown = function(e){      
+
+      if(e.keyCode > 47 && e.keyCode < 112 ||
+         e.keyCode > 185 && e.keyCode < 193 ||
+         e.keyCode > 218 && e.keyCode < 230 ||
+         e.keyCode == 32){//Picking function keys
+
         e.preventDefault();//Killing the keys function
 
         //Making the input show the predefined array
-        buildQuestion.push(askLucifer1[pressCount]);
+        buildQuestion.push(askLucifer[pressCount]);
         let questionDone = buildQuestion.join("");
         question.value = questionDone;
 
-        //Storing the real string in a array
-        buildAnswer.push(e.key);//Store the real string typed as an array
+        //Storing the real string in a array and passing to hidden div as string
+        buildAnswer.push(e.key);
         var answerDone = buildAnswer.join("");console.log(answerDone);
+        answer.innerHTML = answerDone;
+
         pressCount++;//Increasing keypress counter
+        
       } else if(e.keyCode == 17) {
+        eyes.removeAttribute("class");
+        eyes.setAttribute("class", "eyes-opened");
+        tempest.play();
         leaveKeyboard();//When key enter is pressed
       }
 
@@ -40,24 +58,30 @@ function luciferGame(){
     
   }
 
-  //the game start with this function active (toggle via enter key)
-  function leaveKeyboard(array){
-    console.log("outro");
-    document.onkeydown = function(e){
-      if(e.keyCode == 17){//Just waits for the enter key to be pressed
-        // question.style = "display:none";
-        // body.appendChild(newDiv);
-        // let parent = this.getElementsByTagName("div")[0];
-        // let pTag = document.createElement('p');
-        // let answer = document.createTextNode(takeKeyboard());
-        // pTag.appendChild(answer);
-        // parent.appendChild(pTag);
+  //Giving the keyboard back to the user
+  function leaveKeyboard(){
 
-        takeKeyboard();//Call other function with enter key
+    document.onkeydown = function(e){
+
+      //Enter shows the answer
+      if(e.keyCode == 13){
+
+        susp.play();
+        answer.style = "opacity:1;"
+        setTimeout(function(){
+          
+        },1500)
+      }else if(e.keyCode == 17){//Just waits for the ctrl key to be pressed
+        tempest.play();
+        eyes.removeAttribute("class");
+        eyes.setAttribute("class", "eyes-closing");
+        takeKeyboard();//Call other function with ctrl key
       }
     }
 
   }
+  
+  takeKeyboard();//Game start with first method
 
 }
 
