@@ -16,7 +16,7 @@ function luciferGame(){
 
       "Oh my dark lord, voracious shredder of souls, king of the seven hells, mentor of the badness! We would be pleased if you answer this question:",
 
-      "Wicked leader of evil minds, strongest force in the entire world, the one who all people should praise! Please, honor your servant, answering:"
+      "Wicked leader of evil minds, strongest force in the entire world, the one who all people should praise! Please, honor your servant answering:"
     ];
 
     let askLucifer = randomQuestions[Math.floor(Math.random()*randomQuestions.length)];
