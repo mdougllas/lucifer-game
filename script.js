@@ -8,15 +8,21 @@ function luciferGame(){
 
     //Preparing the fake string to be shown on input while typing
     let randomQuestions = [
-      "Oh great master of death, powerful mind of the dark side, intelligence of the desperate souls! Please, help your servant answering...",
+      "Oh great master of death, powerful mind of the dark side, intelligence of the desperate souls! Please, help your servant answer...",
 
       "Lucifer, strongest power of darkness, prince of evil, malefic mind! Could you please answer for your servant and his friends the following:",
       
-      ""
+      "Dark knight of the shadows, most evil being in the universe, the one who terrifies the weak and the blind! Please, can you tell us the answer",
+
+      "Oh my dark lord, voracious shredder of souls, king of the seven hells, mentor of the badness! We would be pleased if you answer this question:",
+
+      "Wicked leader of evil minds, strongest force in the entire world, the one who all people should praise! Please, honor your servant, answering:"
     ];
 
+    let askLucifer = randomQuestions[Math.floor(Math.random()*randomQuestions.length)];
+
     //Temporary question
-    let askLucifer = "Oh great master of death, powerful mind of the dark side, intelligence of the desperate souls! Please, help your servant answering...";
+    // let askLucifer = "Oh great master of death, powerful mind of the dark side, intelligence of the desperate souls! Please, help your servant answering...";
     
     askLucifer = askLucifer.split("");//Separating the string in one array
     let buildQuestion = [];//Empty array will fill the input

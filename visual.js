@@ -18,6 +18,7 @@ window.onload = function() {
 
   luciferTitle.style = "opacity: 1; font-size: 8em";
   setTimeout(function(){
+    start.setAttribute("class", "transition5");
     start.style = "visibility: visible; opacity: 1;"
   },7000);
 
